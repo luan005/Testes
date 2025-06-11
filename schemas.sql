@@ -1,10 +1,10 @@
-PRAGMA foreign_keys = ON;
-
 DROP TABLE IF EXISTS tb_instituicao;
 DROP TABLE IF EXISTS tb_municipio;
 DROP TABLE IF EXISTS tb_microrregiao;
 DROP TABLE IF EXISTS tb_mesorregiao;
 DROP TABLE IF EXISTS tb_uf;
+
+PRAGMA foreign_keys = ON;
 
 CREATE TABLE tb_uf (
     id INTEGER PRIMARY KEY,
@@ -70,6 +70,11 @@ CREATE TABLE tb_instituicao (
     qt_mat_bas TEXT NOT NULL,
     co_regiao TEXT NOT NULL,
     co_uf TEXT NOT NULL,
-    co_municipio INTEGER NOT NULL,
+    co_municipio TEXT NOT NULL, -- <- esta linha estava faltando!
+    co_microrregiao TEXT NOT NULL,
+    co_mesorregiao TEXT NOT NULL,
     FOREIGN KEY (co_municipio) REFERENCES tb_municipio(id)
 );
+
+
+

@@ -114,14 +114,16 @@ for inst in instituicoes:
             qt_mat_bas,
             inst.get('CO_REGIAO', ''),
             inst.get('CO_UF', ''),
-            co_municipio
+            co_municipio,
+            inst.get('CO_MICRORREGIAO', ''),
+            inst.get('CO_MESORREGIAO', '')
         )
 
         cursor.execute('''
             INSERT OR IGNORE INTO tb_instituicao (
                 no_regiao, sg_uf, no_municipio, no_mesorregiao, no_microrregiao,
-                co_entidade, qt_mat_bas, co_regiao, co_uf, co_municipio
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                co_entidade, qt_mat_bas, co_regiao, co_uf, co_municipio, co_microrregiao, co_mesorregiao
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', values)
         inseridos += 1
 

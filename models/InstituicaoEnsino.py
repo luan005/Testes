@@ -35,16 +35,16 @@ class InstituicaoEnsino:
         }
     
 class InstituicaoEnsinoSchema(Schema):
-    no_regiao = fields.Str(required=True, validate=validate.Length(min=1))
-    sg_uf = fields.Str(required=True, validate=validate.Length(equal=2))
-    no_municipio = fields.Str(required=True, validate=validate.Length(min=1))
-    no_mesorregiao = fields.Str(required=True, validate=validate.Length(min=1))
-    no_microrregiao = fields.Str(required=True, validate=validate.Length(min=1))
-    co_entidade = fields.Str(required=True, validate=validate.Regexp(r'^[0-9]+$'))
-    qt_mat_bas = fields.Str(required=True, validate=validate.Regexp(r'^[0-9]+$'))
-    co_regiao = fields.Str(required=True, validate=validate.Regexp(r'^[0-9]+$'))
-    co_uf = fields.Str(required=True, validate=validate.Regexp(r'^[0-9]+$'))
-    co_municipio = fields.Str(required=True, validate=validate.Regexp(r'^[0-9]+$'))
-    co_microrregiao = fields.Str(required=True, validate=validate.Regexp(r'^[0-9]+$'))
-    co_mesorregiao = fields.Str(required=True, validate=validate.Regexp(r'^[0-9]+$'))
+    no_regiao = fields.String(required=True)
+    sg_uf = fields.String(required=True)
+    no_municipio = fields.String(required=True)
+    no_mesorregiao = fields.String(required=True)
+    no_microrregiao = fields.String(required=True)
+    co_entidade = fields.String(required=True)
+    qt_mat_bas = fields.String(required=True)
+    co_regiao = fields.String(required=True)
+    co_uf = fields.String(required=True)
+    co_municipio = fields.Integer(required=True)
+    co_microrregiao = fields.Integer(required=True)
+    co_mesorregiao = fields.Integer(required=True)
 
